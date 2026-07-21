@@ -46,7 +46,7 @@ namespace SDC_Test.Core
         private void OnHelloMessageReceived(in HelloMessage message)
         {
 #if DEBUG
-            Debug.Log($"<color=#32cd32>[{nameof(NetworkClient)}, CLIENT RECEIVE]</color>" +
+            Debug.Log($"<color=#32cd32>[{nameof(NetworkPlayer)}, CLIENT RECEIVE]</color>" +
                 $" Message processed by {gameObject.name}: <color=#ffffff>\"{message.Message}\"</color>");
 #endif
         }
