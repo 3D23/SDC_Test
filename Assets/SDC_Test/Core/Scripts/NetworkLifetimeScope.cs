@@ -18,17 +18,6 @@ namespace SDC_Test.Core.Installers
             if (m_NetworkManager != null)
                 builder.RegisterComponent(m_NetworkManager);
 
-            if (m_NetworkManager != null 
-                && m_NetworkManager.playerPrefab != null)
-            {
-                if (m_NetworkManager.playerPrefab.TryGetComponent<NetworkPlayer>(out var playerComponent))
-                    builder.RegisterComponentInNewPrefab(playerComponent, Lifetime.Transient);
-#if DEBUG
-                else
-                    Debug.LogError($"[{nameof(NetworkLifetimeScope)}] The playerPrefab in NetworkManager does not contain the {nameof(NetworkPlayer)} component!");
-#endif
-            }
-
             if (m_NetworkGuiTester != null)
                 builder.RegisterComponent(m_NetworkGuiTester);
         }
